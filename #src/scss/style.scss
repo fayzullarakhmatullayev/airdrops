@@ -1,0 +1,26 @@
+body {
+  background-color: red;
+  color: white;
+}
+
+@mixin color($color) {
+  background-color: $color;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+.block {
+  @include color(red);
+  @include size(100px, 100px);
+  @include position(0, 0, 0, 0);
+}
