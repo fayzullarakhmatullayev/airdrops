@@ -81,6 +81,43 @@ body {
   padding: 0 16px;
 }
 
+.btn {
+  background-image: url("../icons/subscribe-btn.svg");
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 320px auto;
+  width: 320px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 15px 24px;
+  gap: 8px;
+}
+
+.btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.btn span {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  text-decoration: underline;
+}
+
+.btn:hover {
+  background-image: url("../icons/subscribe-btn-hover.svg");
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -719,39 +756,14 @@ body {
   margin-bottom: 26px;
 }
 
-.subscribe__btn {
-  background-image: url("../icons/subscribe-btn.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 320px 56px;
-  width: 100%;
-  max-width: 320px;
-  width: 100%;
+.subscribe__actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  padding: 15px 24px;
-  gap: 8px;
-}
-
-.subscribe__btn img {
-  width: 24px;
-  height: 24px;
-}
-
-.subscribe__btn span {
-  font-size: 18px;
-  line-height: 25px;
-  font-weight: 700;
-  color: var(--color-dark-blue);
-  text-decoration: underline;
+  gap: 24px;
 }
 
 .faq {
