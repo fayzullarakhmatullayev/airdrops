@@ -228,7 +228,7 @@ body {
   background: url('../img/hero-bg.png') no-repeat 100% 100% / cover;
   min-height: 816px;
   &__content {
-    padding: 78px 0 238px;
+    padding: 62px 0 238px;
     max-width: 1156px;
     width: 100%;
     margin: 0 auto;
@@ -239,7 +239,8 @@ body {
       color: var(--color-white);
       font-family: var(--font-press-start);
       line-height: 1;
-      margin-bottom: 48px;
+      margin-bottom: 45px;
+      letter-spacing: 1px;
     }
     &--subtitle {
       margin-bottom: 10px;
@@ -275,8 +276,8 @@ body {
     }
     &--gif {
       position: absolute;
-      right: 0;
-      top: -40px;
+      right: -60px;
+      top: -5px;
       transform: rotateY(180deg);
     }
     &--actions {
@@ -371,7 +372,7 @@ body {
   }
   &__content {
     background-color: var(--color-yellow);
-    padding: 128px 80px 52px 328px;
+    padding: 95px 80px 52px 328px;
     border-radius: 12px;
 
     &--video {
@@ -439,14 +440,14 @@ body {
     z-index: 10;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
     font-family: var(--font-press-start);
     align-items: center;
     text-align: center;
     position: relative;
 
     p {
-      font-size: 62px;
+      font-size: 70px;
       line-height: 1;
       color: var(--color-yellow);
       text-shadow: 10px 0px 0 var(--color-dark-blue);
@@ -520,12 +521,12 @@ body {
     }
     &--wrapper {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
       background-color: var(--color-blue);
       padding: 24px 48px 24px 64px;
       border-radius: 12px;
-      gap: 64px;
+      gap: 58px;
     }
     &--gif {
       max-width: 210px;
@@ -537,22 +538,25 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: 76% center;
       }
     }
     &--content {
       font-size: 24px;
       line-height: 33px;
       color: var(--color-white);
-      font-weight: 700;
+      font-weight: 600;
+      padding-bottom: 10px;
+      letter-spacing: 0.25px;
       span {
         color: var(--color-yellow);
       }
     }
     &--picachu {
       position: absolute;
-      top: -80px;
-      left: -10px;
+      top: -110px;
+      left: 4px;
+      scale: 1.8;
     }
   }
 }
@@ -597,7 +601,7 @@ body {
     font-size: 32px;
     line-height: 1.2;
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 
     span {
       color: var(--color-yellow);
@@ -627,10 +631,10 @@ body {
 
 // FAQ
 .faq {
-  padding-top: 62px;
+  padding-top: 78px;
   &__title {
     text-shadow: 10px 0 0 var(--color-yellow);
-    font-size: 72px;
+    font-size: 67px;
     color: var(--color-dark-blue);
     font-family: var(--font-press-start);
     line-height: 1;
@@ -638,32 +642,34 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 64px;
+    gap: 8px;
+    margin-bottom: 58px;
     span {
       margin-top: -9px;
+      font-size: 56px;
     }
   }
   &__block {
     position: relative;
-    padding-bottom: 111px;
+    padding-bottom: 110px;
   }
   &__svg {
     width: 100%;
     opacity: 0;
+    scale: 1.038;
     clip-path: inset(0 100% 0 0);
     transition: clip-path 1.5s ease-out 300ms, opacity 1.5s ease-out;
     display: block;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 8px;
     width: 100%;
   }
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    max-width: 576px;
+    gap: 25px;
+
     width: 100%;
     padding-left: 118px;
     position: relative;
@@ -673,16 +679,18 @@ body {
       font-size: 24px;
       line-height: 33px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
     }
     &--text {
       font-size: 16px;
-      line-height: 22px;
+      line-height: 26px;
       font-weight: 500;
       color: var(--color-dark-blue);
       a {
         color: var(--color-blue);
         text-decoration: underline;
+        font-weight: 600;
       }
     }
   }
@@ -702,6 +710,69 @@ body {
     justify-content: space-between;
     gap: 24px;
     margin-bottom: 72px;
+  }
+
+  &__card {
+    position: relative;
+
+    .stroke-target {
+      transition: var(--transition);
+    }
+
+    &:hover {
+      .contact__card--btn {
+        background-image: url('../icons/contact-hover-btn.svg');
+        span {
+          color: var(--color-dark-blue);
+        }
+      }
+      .stroke-target {
+        stroke: url(#linear-gradient);
+      }
+    }
+
+    svg {
+      width: 100%;
+    }
+
+    &--btn {
+      position: absolute;
+      left: 50%;
+      top: 16px;
+      transform: translateX(-50%);
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+      background-size: 234px auto;
+      width: 234px;
+      height: 56px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      span {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 700;
+        color: var(--color-dark-blue);
+        text-decoration: underline;
+      }
+
+      &.yellow {
+        background-image: url('../icons/contact-yellow-btn.svg');
+      }
+      &.blue {
+        background-image: url('../icons/contact-blue-btn.svg');
+
+        span {
+          color: var(--color-white);
+        }
+      }
+      &.white {
+        background-image: url('../icons/contact-white-btn.svg');
+      }
+    }
   }
 }
 
