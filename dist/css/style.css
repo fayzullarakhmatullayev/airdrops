@@ -5,6 +5,7 @@
   --color-blue: #0098ea;
   --color-dark-blue: #00293f;
   --color-yellow: #ffdd00;
+  --color-black: #000;
   --animated-linar-gradient: linear-gradient(
     100deg,
     #008cff 0%,
@@ -845,4 +846,42 @@ body {
 .faq__list--text a {
   color: var(--color-blue);
   text-decoration: underline;
+}
+
+.contact {
+  padding: 64px 0 0;
+  background: url("../img/contact-bg.png") no-repeat center center/cover;
+  background-color: var(--color-blue);
+}
+
+.contact__wrapper {
+  max-width: 1156px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 72px;
+}
+
+.footer {
+  padding-top: 273px;
+  background: url("../img/footer-bg.png") no-repeat center center/cover;
+  height: 441px;
+  position: relative;
+}
+
+.footer img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 490px;
+  height: 240px;
+  z-index: 10;
 }
