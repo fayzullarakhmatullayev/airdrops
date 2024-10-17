@@ -135,6 +135,9 @@ body {
     display: flex;
     align-items: center;
     gap: 32px;
+    @include _1119-block {
+      margin-right: 16px;
+    }
   }
   &__nav {
     display: flex;
@@ -227,12 +230,16 @@ body {
 .hero {
   background: url('../img/hero-bg.png') no-repeat 100% 100% / cover;
   min-height: 816px;
+  @include _1119-block {
+    overflow-x: hidden;
+  }
   &__content {
     padding: 62px 0 238px;
     max-width: 1156px;
     width: 100%;
     margin: 0 auto;
     position: relative;
+
     &--title {
       text-shadow: 10px 0px 0 var(--color-dark-blue);
       font-size: 72px;
@@ -279,6 +286,9 @@ body {
       right: -60px;
       top: -5px;
       transform: rotateY(180deg);
+      @include _1119-block {
+        right: -150px;
+      }
     }
     &--actions {
       display: flex;
@@ -348,6 +358,14 @@ body {
 // ABOUT
 .about {
   padding: 75px 0 0;
+
+  @include _1119-block {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
   &__title {
     position: absolute;
     top: -35px;
@@ -362,6 +380,10 @@ body {
     line-height: 42px;
     text-align: center;
     font-weight: 400;
+    @include _1119-block {
+      left: 49%;
+      white-space: nowrap;
+    }
   }
   &__wrapper {
     position: relative;
@@ -369,11 +391,19 @@ body {
     width: 100%;
     margin: 0 auto;
     padding-bottom: 56px;
+    @include _1119-block {
+      padding-bottom: 54px;
+    }
   }
   &__content {
     background-color: var(--color-yellow);
     padding: 95px 80px 52px 328px;
     border-radius: 12px;
+
+    @include _1119-block {
+      border-radius: 0;
+      padding: 93px 22px 58px 245px;
+    }
 
     &--video {
       width: 100%;
@@ -392,13 +422,15 @@ body {
 }
 
 // CONFIGURE
-
 .configure {
   background-color: var(--color-blue);
   &__wrapper {
     position: relative;
     width: 100%;
     padding: 42px 0;
+    @include _1119-block {
+      margin-left: -10px;
+    }
   }
   &__bg {
     position: absolute;
@@ -417,7 +449,10 @@ body {
     top: 50%;
     transform: translateY(-50%);
     overflow: hidden;
-    z-index: 10;
+    z-index: 8;
+    @include _1119-block {
+      right: 5px;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -433,8 +468,11 @@ body {
     font-size: 30px;
     line-height: 42px;
     margin-bottom: 32px;
-    z-index: 10;
+    z-index: 15;
     position: relative;
+    @include _1119-block {
+      z-index: 10;
+    }
   }
   &__price {
     z-index: 10;
@@ -470,6 +508,9 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     margin-bottom: 82px;
+    @include _1119-block {
+      padding-right: 17px;
+    }
   }
   &__card {
     display: flex;
@@ -518,6 +559,11 @@ body {
       left: 50%;
       transform: translateX(-50%);
       top: -35px;
+
+      @include _1119-block {
+        white-space: nowrap;
+        left: 49%;
+      }
     }
     &--wrapper {
       display: flex;
@@ -527,6 +573,12 @@ body {
       padding: 24px 48px 24px 64px;
       border-radius: 12px;
       gap: 58px;
+
+      @include _1119-block {
+        padding: 57px 25px 22px 56px;
+        margin-right: 15px;
+        gap: 35px;
+      }
     }
     &--gif {
       max-width: 210px;
@@ -548,8 +600,12 @@ body {
       font-weight: 600;
       padding-bottom: 10px;
       letter-spacing: 0.25px;
+      width: 100%;
       span {
         color: var(--color-yellow);
+      }
+      @include _1119-block {
+        line-height: 34px;
       }
     }
     &--picachu {
@@ -557,6 +613,10 @@ body {
       top: -110px;
       left: 4px;
       scale: 1.8;
+      @include _1119-block {
+        left: 38px;
+        scale: 1.6;
+      }
     }
   }
 }
@@ -580,6 +640,14 @@ body {
   background-position: center;
   background-size: cover;
   padding: 32px 0;
+
+  @include _1119-block {
+    padding-bottom: 36px;
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -593,6 +661,11 @@ body {
     img {
       width: 100%;
       height: 100%;
+    }
+
+    @include _1119-block {
+      margin-bottom: 20px;
+      margin-right: 15px;
     }
   }
   &__title {
@@ -614,6 +687,16 @@ body {
         margin-bottom: 3px;
       }
     }
+
+    @include _1119-block {
+      font-size: 28px;
+      font-weight: 500;
+      margin-right: 15px;
+      span {
+        margin-top: 2px;
+        align-items: flex-end;
+      }
+    }
   }
   &__subtitle {
     font-size: 24px;
@@ -621,17 +704,28 @@ body {
     color: var(--color-white);
     text-align: center;
     margin-bottom: 26px;
+    @include _1119-block {
+      margin-right: 15px;
+    }
   }
   &__actions {
     display: flex;
     align-items: center;
     gap: 24px;
+    @include _1119-block {
+      margin-right: 15px;
+    }
   }
 }
 
 // FAQ
 .faq {
   padding-top: 78px;
+  @include _1119-block {
+    overflow-x: hidden;
+    padding-top: 82px;
+  }
+
   &__title {
     text-shadow: 10px 0 0 var(--color-yellow);
     font-size: 67px;
@@ -648,10 +742,17 @@ body {
       margin-top: -9px;
       font-size: 56px;
     }
+    @include _1119-block {
+      margin-right: 15px;
+      margin-bottom: 16px;
+    }
   }
   &__block {
     position: relative;
     padding-bottom: 110px;
+    @include _1119-block {
+      padding-bottom: 68px;
+    }
   }
   &__svg {
     width: 100%;
@@ -664,6 +765,12 @@ body {
     left: 0;
     bottom: 8px;
     width: 100%;
+
+    @include _1119-block {
+      left: -100px;
+      scale: 1.45;
+      bottom: 82px;
+    }
   }
   &__list {
     display: flex;
@@ -674,6 +781,15 @@ body {
     padding-left: 118px;
     position: relative;
     z-index: 10;
+
+    @include _1119-block {
+      padding-left: 0;
+      max-width: 400px;
+      gap: 28px;
+      br {
+        display: none;
+      }
+    }
 
     &--title {
       font-size: 24px;
@@ -701,6 +817,10 @@ body {
   padding: 64px 0 0;
   background: url('../img/contact-bg.png') no-repeat center center / cover;
   background-color: var(--color-blue);
+
+  @include _1119-block {
+    padding-top: 40px;
+  }
   &__wrapper {
     max-width: 1156px;
     width: 100%;
@@ -710,11 +830,33 @@ body {
     justify-content: space-between;
     gap: 24px;
     margin-bottom: 72px;
+    @include _1119-block {
+      gap: 0;
+      justify-content: center;
+      margin-left: 16px;
+      margin-bottom: 94px;
+    }
   }
 
   &__card {
     position: relative;
+    @include _1119-block {
+      &:nth-child(2) {
+        margin-left: -30px;
+      }
+      &:nth-child(3) {
+        margin-left: -45px;
+      }
+      &:nth-child(4) {
+        margin-left: -61px;
+      }
+    }
 
+    @include _1119-block {
+      height: 266px;
+      width: 266px;
+      display: block;
+    }
     .stroke-target {
       transition: var(--transition);
     }
@@ -757,6 +899,10 @@ body {
         font-weight: 700;
         color: var(--color-dark-blue);
         text-decoration: underline;
+      }
+
+      @include _1119-block {
+        top: 17px;
       }
 
       &.yellow {

@@ -1,12 +1,3 @@
-@mixin customLineClamp($lineClampValue) {
-  display: -webkit-box;
-  -webkit-line-clamp: $lineClampValue;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  overflow-wrap: break-word;
-}
-
 @mixin _1119-block {
   @media (max-width: 1119.98px) {
     @content;
