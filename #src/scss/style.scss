@@ -1,8 +1,8 @@
-@import 'mixins';
+@import "mixins";
 
 :root {
-  --font-press-start: 'Press Start 2P', system-ui;
-  --font-montserrat: 'Montserrat', sans-serif;
+  --font-press-start: "Press Start 2P", system-ui;
+  --font-montserrat: "Montserrat", sans-serif;
   --color-white: #fff;
   --color-blue: #0098ea;
   --color-dark-blue: #00293f;
@@ -18,14 +18,7 @@
     #008cff 95%
   );
 
-  --linear-gradient: linear-gradient(
-    90deg,
-    #ff0000 0%,
-    #ffa600 27%,
-    #eeff00 53%,
-    #00ff0d 77%,
-    #008cff 100%
-  );
+  --linear-gradient: linear-gradient(90deg, #ff0000 0%, #ffa600 27%, #eeff00 53%, #00ff0d 77%, #008cff 100%);
 
   --transition: all 0.3s ease-in-out;
   --text-animation: animatedTextGradient 6s linear infinite;
@@ -83,14 +76,24 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
+  @include _767-block {
+    padding: 0 12px;
+  }
 }
 
 .btn {
-  background-image: url('../icons/subscribe-btn.svg');
+  background-image: url("../icons/subscribe-btn.svg");
   background-repeat: no-repeat;
   background-position: 100% 100%;
   background-size: 320px auto;
   width: 320px;
+
+  &__blue {
+    background-image: url("../icons/btn-blue.svg");
+    span {
+      color: var(--color-white) !important;
+    }
+  }
 
   display: flex;
   align-items: center;
@@ -111,7 +114,7 @@ body {
   }
 
   &:hover {
-    background-image: url('../icons/subscribe-btn-hover.svg');
+    background-image: url("../icons/subscribe-btn-hover.svg");
   }
 }
 
@@ -122,12 +125,21 @@ body {
   align-items: center;
   padding-top: 16px;
   padding-bottom: 16px;
+
+  @include _767-block {
+    padding: 8px 0 0;
+  }
   &__logo {
     width: 80px;
     height: 80px;
     img {
       width: 100%;
       height: 100%;
+    }
+
+    @include _767-block {
+      width: 48px;
+      height: 48px;
     }
   }
 
@@ -137,6 +149,9 @@ body {
     gap: 32px;
     @include _1119-block {
       margin-right: 16px;
+    }
+    @include _767-block {
+      display: none;
     }
   }
   &__nav {
@@ -153,7 +168,7 @@ body {
       position: relative;
 
       &::after {
-        content: '';
+        content: "";
         display: block;
         height: 1px;
         background: var(--color-white);
@@ -224,14 +239,77 @@ body {
       }
     }
   }
+
+  .nav-burger {
+    display: none;
+    @include _767-block {
+      display: block;
+    }
+  }
+  .nav-burger-close {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  &.active {
+    display: block;
+  }
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background: var(--color-blue);
+  z-index: 1000;
+  overflow-y: auto;
+  padding-bottom: 24px;
+
+  .header__wrapper--mob {
+    display: flex !important;
+    flex-direction: column;
+    margin-right: 0;
+
+    margin-bottom: 99px;
+
+    .header__nav {
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+
+  .hero__content {
+    padding-bottom: 0;
+    &--title {
+      margin-bottom: 40px;
+    }
+    &--actions {
+      max-width: 320px;
+      width: 100%;
+      margin: 0 auto 88px;
+    }
+  }
+
+  .mob-btn {
+    .btn {
+      margin: 0 auto;
+    }
+  }
 }
 
 // HERO
 .hero {
-  background: url('../img/hero-bg.png') no-repeat 100% 100% / cover;
+  background: url("../img/hero-bg.png") no-repeat 100% 100% / cover;
   min-height: 816px;
+
   @include _1119-block {
     overflow-x: hidden;
+  }
+
+  @include _767-block {
+    background: var(--color-blue);
+    min-height: auto;
   }
   &__content {
     padding: 62px 0 238px;
@@ -239,6 +317,10 @@ body {
     width: 100%;
     margin: 0 auto;
     position: relative;
+
+    @include _767-block {
+      padding: 32px 0 30px;
+    }
 
     &--title {
       text-shadow: 10px 0px 0 var(--color-dark-blue);
@@ -248,8 +330,22 @@ body {
       line-height: 1;
       margin-bottom: 45px;
       letter-spacing: 1px;
+      @include _767-block {
+        text-align: center;
+        font-size: 47px;
+        margin-bottom: 44px;
+        span {
+          font-size: 66px;
+          margin-bottom: 4px;
+          display: block;
+          margin-bottom: 18px;
+        }
+      }
     }
     &--subtitle {
+      br {
+        display: none;
+      }
       margin-bottom: 10px;
       font-size: 28px;
       font-weight: 600;
@@ -259,7 +355,7 @@ body {
         color: var(--color-white);
         text-decoration: underline;
       }
-      span {
+      .wrapper span {
         font-weight: 800;
         background: var(--animated-linar-gradient);
         -webkit-background-clip: text;
@@ -271,7 +367,7 @@ body {
         transition: var(--transition);
         font-size: 38px;
       }
-      p {
+      .wrapper p {
         font-size: 38px;
         display: inline-block;
         font-weight: 800;
@@ -279,6 +375,34 @@ body {
         color: var(--color-yellow);
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: var(--color-dark-blue);
+      }
+
+      @include _767-block {
+        br {
+          display: block;
+        }
+        margin-bottom: 0;
+        text-align: center;
+        .wrapper {
+          display: flex;
+          margin-top: -1px;
+          gap: 10px;
+
+          span {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+          }
+        }
+        .wrapper p,
+        .wrapper span {
+          font-size: 32px;
+          white-space: nowrap;
+        }
+
+        &:not(:first-child) {
+          line-height: 1.36;
+        }
       }
     }
     &--gif {
@@ -289,12 +413,22 @@ body {
       @include _1119-block {
         right: -150px;
       }
+
+      @include _767-block {
+        display: none;
+      }
     }
     &--actions {
       display: flex;
       align-items: center;
       gap: 24px;
       margin-top: 56px;
+      @include _767-block {
+        margin-top: 64px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
     }
     &--btn {
       max-width: 290px;
@@ -344,6 +478,12 @@ body {
         width: 48px;
         height: 48px;
         transform: rotateY(180deg);
+      }
+      @include _767-block {
+        max-width: 100%;
+        padding: 16px 40px;
+        height: 80px;
+        font-size: 24px;
       }
     }
   }
@@ -635,7 +775,7 @@ body {
 // SUBSCRIBE
 .subscribe {
   background-color: var(--color-dark-blue);
-  background-image: url('../icons/subscribe-bg.svg');
+  background-image: url("../icons/subscribe-bg.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -815,7 +955,7 @@ body {
 // CONTACT
 .contact {
   padding: 64px 0 0;
-  background: url('../img/contact-bg.png') no-repeat center center / cover;
+  background: url("../img/contact-bg.png") no-repeat center center / cover;
   background-color: var(--color-blue);
 
   @include _1119-block {
@@ -863,7 +1003,7 @@ body {
 
     &:hover {
       .contact__card--btn {
-        background-image: url('../icons/contact-hover-btn.svg');
+        background-image: url("../icons/contact-hover-btn.svg");
         span {
           color: var(--color-dark-blue);
         }
@@ -906,17 +1046,17 @@ body {
       }
 
       &.yellow {
-        background-image: url('../icons/contact-yellow-btn.svg');
+        background-image: url("../icons/contact-yellow-btn.svg");
       }
       &.blue {
-        background-image: url('../icons/contact-blue-btn.svg');
+        background-image: url("../icons/contact-blue-btn.svg");
 
         span {
           color: var(--color-white);
         }
       }
       &.white {
-        background-image: url('../icons/contact-white-btn.svg');
+        background-image: url("../icons/contact-white-btn.svg");
       }
     }
   }
@@ -925,7 +1065,7 @@ body {
 // FOOTER
 .footer {
   padding-top: 273px;
-  background: url('../img/footer-bg.png') no-repeat center center / cover;
+  background: url("../img/footer-bg.png") no-repeat center center / cover;
   height: 441px;
   position: relative;
   img {

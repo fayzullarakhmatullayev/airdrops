@@ -4,7 +4,8 @@
   "description": "Gulp Package",
   "main": "index.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "format": "npx prettier --write #src"
   },
   "author": "Fayzulla Rakhmatullayev",
   "license": "ISC",
@@ -19,7 +20,10 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
     "gulp-uglify-es": "^3.0.0",
-    "sass": "^1.77.6",
+    "sass": "^1.80.2",
     "webp-converter": "^2.2.3"
+  },
+  "dependencies": {
+    "sass-loader": "^16.0.2"
   }
 }
